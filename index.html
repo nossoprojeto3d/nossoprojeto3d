@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nosso Projeto 3D</title>
+<meta name="description" content="Impressão 3D personalizada: peças sob medida, miniaturas, organizadores e decoração. Transformamos ideias em peças 3D personalizadas.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+  *{box-sizing:border-box;}
+  img{max-width:100%;display:block;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{margin:0;background:#120E09;font-family:'Work Sans',sans-serif;color:#F4EFE3;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+    padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);}
+  a{color:inherit;text-decoration:none;}
+  .np-header{padding:24px 32px;}
+  .np-section{padding:96px 32px;position:relative;}
+  .np-container{max-width:1040px;margin:0 auto;}
+  .np-divider{height:1px;background:linear-gradient(90deg,transparent,#3A3226,transparent);}
+  .np-offer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;}
+  .np-about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;align-items:center;}
+
+  .np-hero-glow{position:relative;}
+  .np-hero-glow::before{content:"";position:absolute;inset:-46px;background:conic-gradient(from 0deg,transparent,rgba(201,162,39,.45),transparent 55%,transparent 80%,rgba(232,200,115,.3),transparent);filter:blur(26px);animation:npSpin 10s linear infinite;z-index:0;}
+  .np-hero-glow img{position:relative;z-index:1;}
+  @keyframes npSpin{to{transform:rotate(360deg);}}
+
+  .np-shimmer{background:linear-gradient(100deg,#C9A227 0%,#F4EFE3 22%,#C9A227 44%,#C9A227 100%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:npShimmer 4s linear infinite;}
+  @keyframes npShimmer{to{background-position:-220% center;}}
+
+  .np-hero-badge{animation:npFadeUp .8s ease-out both;}
+  .np-hero-title{animation:npFadeUp .8s ease-out .1s both;}
+  .np-hero-tag{animation:npFadeUp .8s ease-out .2s both;}
+  .np-hero-social{animation:npFadeUp .8s ease-out .3s both;}
+  .np-link-list{animation:npFadeUp .8s ease-out .4s both;}
+  @keyframes npFadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+
+  .np-facet{clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));}
+
+  .np-link-row{position:relative;overflow:hidden;border:1px solid #241C12;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s ease,box-shadow .35s ease;}
+  .np-link-row::after{content:"";position:absolute;top:0;left:-60%;width:35%;height:100%;background:linear-gradient(115deg,transparent,rgba(244,239,227,.14),transparent);transform:skewX(-18deg);transition:left .65s ease;pointer-events:none;}
+  .np-link-row:hover{transform:translateX(7px);border-color:#C9A227;box-shadow:0 10px 28px -10px rgba(201,162,39,.4);}
+  .np-link-row:hover::after{left:130%;}
+  .np-link-row .np-icon{transition:transform .35s ease;}
+  .np-link-row:hover .np-icon{transform:scale(1.12) rotate(-4deg);}
+
+  .np-social-btn{border:1px solid #3A3226;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;}
+  .np-social-btn:hover{transform:translateY(-3px);border-color:#C9A227;box-shadow:0 8px 20px -8px rgba(201,162,39,.45);}
+
+  .np-offer-card{border:1px solid #241C12;transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;}
+  .np-offer-card:hover{transform:translateY(-6px);border-color:#3A3226;box-shadow:0 16px 32px -16px rgba(0,0,0,.5);}
+
+  .np-scroll-cue{animation:npBounce 1.8s ease-in-out infinite;opacity:.55;}
+  @keyframes npBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(7px);}}
+
+  @media (max-width:760px){
+    .np-header{padding:18px 20px;}
+    .np-section{padding:56px 24px;}
+    .np-offer-grid{grid-template-columns:1fr;}
+    .np-about-grid{grid-template-columns:1fr;gap:36px;}
+    .np-hero-title{font-size:26px !important;}
+    .np-section h2{font-size:27px !important;}
+    .np-quote-lg{font-size:19px !important;}
+  }
+  @media (max-width:360px){
+    .np-hero-badge img{height:96px !important;}
+    .np-link-row span{font-size:14px !important;}
+  }
+</style>
+</head>
+<body>
+
+<div style="width:100%;box-sizing:border-box;overflow:hidden;">
+
+  <!-- Header -->
+  <header class="np-header">
+    <div class="np-container" style="display:flex;align-items:center;gap:10px;">
+      <img src="assets/logo.png" alt="Nosso Projeto 3D" style="height:26px;width:auto;" />
+      <span style="font-family:'Fraunces',serif;font-size:15px;letter-spacing:.02em;color:#A69C87;">Nosso Projeto 3D</span>
+    </div>
+  </header>
+
+  <!-- Hero + link hub -->
+  <section class="np-section" style="padding-top:28px;padding-bottom:56px;">
+    <div class="np-container" style="max-width:460px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;">
+
+      <div class="np-hero-badge np-hero-glow" style="margin-bottom:4px;">
+        <img src="assets/logo.png" alt="Nosso Projeto 3D" style="height:118px;width:auto;" />
+      </div>
+
+      <h1 class="np-hero-title np-shimmer" style="font-family:'Fraunces',serif;font-weight:500;font-size:28px;line-height:1.2;margin:0;">Nosso Projeto 3D</h1>
+      <p class="np-hero-tag" style="font-family:'Work Sans',sans-serif;font-size:15px;color:#A69C87;margin:0;">Transformamos ideias em peças 3D personalizadas.</p>
+
+      <div class="np-hero-social" style="display:flex;gap:14px;margin-top:2px;">
+        <a href="#" data-link="contato.instagram" aria-label="Instagram" class="np-social-btn" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#F4EFE3" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="#F4EFE3" stroke="none"/></svg>
+        </a>
+        <a href="#" data-link="contato.whatsapp" aria-label="WhatsApp" class="np-social-btn" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#F4EFE3" d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        </a>
+      </div>
+
+      <div class="np-link-list" style="display:flex;flex-direction:column;gap:13px;width:100%;margin-top:20px;">
+
+        <a href="#" data-link="hub.catalogoWhatsapp" class="np-link-row np-facet" style="padding:17px 20px;display:flex;align-items:center;gap:14px;">
+          <svg class="np-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="1.6" style="flex-shrink:0;" aria-hidden="true"><path d="M5 4h11l3 3v13H5V4Z"/><path d="M16 4v3h3"/><path d="M8.5 12h7M8.5 15.5h7"/></svg>
+          <span style="font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px;">Catálogo</span>
+        </a>
+
+        <a href="#" data-link="contato.whatsapp" class="np-link-row np-facet" style="padding:17px 20px;display:flex;align-items:center;gap:14px;">
+          <svg class="np-icon" width="19" height="19" viewBox="0 0 24 24" style="flex-shrink:0;" aria-hidden="true"><path fill="#C9A227" d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          <span style="font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px;">Encomende seu pedido</span>
+        </a>
+
+        <a href="#" data-link="hub.shopee" class="np-link-row np-facet" style="padding:17px 20px;display:flex;align-items:center;gap:14px;">
+          <svg class="np-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="1.6" style="flex-shrink:0;" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+          <span style="font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px;">Nossos Produtos — Shopee</span>
+        </a>
+
+        <a href="#" data-link="calculadora.site" class="np-link-row np-facet" style="padding:17px 20px;display:flex;align-items:center;gap:14px;">
+          <svg class="np-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="1.6" style="flex-shrink:0;" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 7h8"/><path d="M7.5 11h1.5v1.5H7.5Zm3.75 0h1.5v1.5h-1.5Zm3.75 0h1.5v1.5h-1.5ZM7.5 14.5h1.5V16H7.5Zm3.75 0h1.5V16h-1.5Zm3.75 0h1.5V16h-1.5Z"/></svg>
+          <span style="font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px;">Nossa Calculadora de Custos</span>
+        </a>
+
+        <a href="#" data-link="hub.stlsGratis" class="np-link-row np-facet" style="padding:17px 20px;display:flex;align-items:center;gap:14px;">
+          <svg class="np-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="1.6" style="flex-shrink:0;" aria-hidden="true"><path d="M20 7 12 3 4 7v10l8 4 8-4V7Z"/><path d="M4 7l8 4 8-4"/><path d="M12 11v10"/></svg>
+          <span style="font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px;">Projetos STLs Grátis</span>
+        </a>
+
+        <a href="#" data-link="calculadora.github" class="np-link-row np-facet" style="padding:17px 20px;display:flex;align-items:center;gap:14px;">
+          <svg class="np-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="1.6" style="flex-shrink:0;" aria-hidden="true"><path d="m9 18-5-6 5-6"/><path d="m15 6 5 6-5 6"/></svg>
+          <span style="font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px;">Colabore na Calculadora (open source)</span>
+        </a>
+
+      </div>
+
+      <div class="np-scroll-cue" style="margin-top:20px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A69C87" stroke-width="1.6" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="np-divider"></div>
+
+  <!-- O que fazemos -->
+  <section class="np-section">
+    <div class="np-container">
+      <h2 style="font-family:'Fraunces',serif;font-weight:600;font-size:36px;margin:0 0 14px;text-align:center;">O que fazemos</h2>
+      <p style="font-family:'Work Sans',sans-serif;font-size:16px;color:#A69C87;margin:0 0 48px;text-align:center;">Do que você imaginou ao que você precisa</p>
+      <div class="np-offer-grid">
+        <div class="np-offer-card np-facet" style="padding:28px;">
+          <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:19px;margin:0 0 10px;">Peças personalizadas</h3>
+          <p style="font-family:'Work Sans',sans-serif;font-size:14.5px;line-height:1.7;color:#A69C87;margin:0;">Sua ideia ganha forma. Criamos peças exclusivas para atender ao que você imaginou.</p>
+        </div>
+        <div class="np-offer-card np-facet" style="padding:28px;">
+          <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:19px;margin:0 0 10px;">Miniaturas &amp; decoração</h3>
+          <p style="font-family:'Work Sans',sans-serif;font-size:14.5px;line-height:1.7;color:#A69C87;margin:0;">Detalhes que ganham vida: miniaturas, objetos decorativos e peças para colecionar.</p>
+        </div>
+        <div class="np-offer-card np-facet" style="padding:28px;">
+          <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:19px;margin:0 0 10px;">Organização &amp; utilidade</h3>
+          <p style="font-family:'Work Sans',sans-serif;font-size:14.5px;line-height:1.7;color:#A69C87;margin:0;">Soluções funcionais para sua casa, seu trabalho e sua rotina, feitas para você.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="np-divider"></div>
+
+  <!-- Sobre / História -->
+  <section class="np-section">
+    <div class="np-container" style="max-width:640px;margin-inline:auto;">
+      <h2 style="font-family:'Fraunces',serif;font-weight:600;font-size:36px;margin:0 0 20px;text-align:center;">Nossa história</h2>
+      <p class="np-quote-lg" style="font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:22px;line-height:1.5;color:#C9A227;text-align:center;margin:0 0 32px;">Somos um casal, dois sonhos e um propósito: construir juntos aquilo que Deus colocou em nossos corações.</p>
+      <p style="font-family:'Work Sans',sans-serif;font-size:16px;line-height:1.75;color:#C9C1B0;margin:0 0 16px;">Somos Junior e Thairine, um casal de empreendedores que acredita que grandes sonhos podem ser construídos juntos, com propósito, dedicação e fé.</p>
+      <p style="font-family:'Work Sans',sans-serif;font-size:16px;line-height:1.75;color:#C9C1B0;margin:0 0 16px;">Junior é engenheiro de software e Thairine é arquiteta. Além de nossas profissões, já construímos juntos nosso primeiro negócio, a Direto de Minas, trazendo produtos de Minas Gerais para nossa região.</p>
+      <p style="font-family:'Work Sans',sans-serif;font-size:16px;line-height:1.75;color:#C9C1B0;margin:0 0 16px;">Agora, iniciamos um novo projeto: nosso negócio de impressão 3D. Criamos produtos personalizados, miniaturas, brinquedos, organizadores, suportes, itens de decoração e muito mais, sempre buscando transformar ideias em algo real.</p>
+      <p style="font-family:'Work Sans',sans-serif;font-size:16px;line-height:1.75;color:#C9C1B0;margin:0;">Mais do que vender produtos, este projeto representa um sonho que estamos construindo lado a lado: conquistar nossa casa, preparar nosso casamento e realizar outros desejos que, com apenas nossas profissões, levariam mais tempo para alcançar.</p>
+      <p style="font-family:'Work Sans',sans-serif;font-size:16px;line-height:1.75;color:#C9C1B0;margin:20px 0 0;">Este é um negócio feito por nós, para nós, com amor, trabalho e propósito.</p>
+
+      <div style="text-align:center;margin:44px auto 0;max-width:460px;">
+        <div style="width:36px;height:1px;background:#C9A227;margin:0 auto 20px;"></div>
+        <p class="np-quote-lg" style="font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:23px;line-height:1.5;color:#C9A227;margin:0;">"E acima de tudo, colocamos Deus à frente de cada passo, reconhecendo que toda honra e toda glória pertencem a Ele."</p>
+        <div style="width:36px;height:1px;background:#C9A227;margin:20px auto 0;"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="np-divider"></div>
+
+  <!-- Localização -->
+  <section class="np-section">
+    <div class="np-container" style="text-align:center;">
+      <h2 style="font-family:'Fraunces',serif;font-weight:600;font-size:36px;margin:0 0 24px;">Onde estamos</h2>
+      <div style="display:flex;flex-direction:column;gap:10px;align-items:center;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="1.6" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg>
+          <span style="font-family:'Work Sans',sans-serif;font-size:15px;color:#C9C1B0;">Atendemos Goiânia e região</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="1.6" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7.5" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>
+          <span style="font-family:'Work Sans',sans-serif;font-size:15px;color:#C9C1B0;">Enviamos para todo o Brasil</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="np-divider"></div>
+
+  <!-- Footer -->
+  <footer class="np-section" style="padding-bottom:56px;padding-top:56px;">
+    <div class="np-container" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;">
+      <img src="assets/logo.png" alt="" style="height:20px;width:auto;opacity:.8;" />
+      <p style="font-family:'Work Sans',sans-serif;font-size:13px;color:#786F5C;margin:0;">Nosso Projeto 3D · @nossoprojeto3d</p>
+    </div>
+  </footer>
+
+</div>
+<script src="assets/links.js"></script>
+</body>
+</html>
