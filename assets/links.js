@@ -35,8 +35,11 @@ function applyLinks() {
     const path = el.getAttribute("data-link").split(".");
     let value = LINKS;
     for (const key of path) value = value && value[key];
-    if (value) el.setAttribute("href", value);
-    else console.warn("[links.js] link não encontrado para:", el.getAttribute("data-link"));
+    if (value) {
+      el.setAttribute("href", value);
+      el.setAttribute("target", "_blank");
+      el.setAttribute("rel", "noopener noreferrer");
+    } else console.warn("[links.js] link não encontrado para:", el.getAttribute("data-link"));
   });
 }
 
