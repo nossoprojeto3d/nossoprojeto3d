@@ -129,7 +129,7 @@
   /* a caixa cresce de baixo pra cima revelando o logo, que fica ancorado no fundo com a altura do palco */
   .printer-build{position:absolute;left:0;right:0;bottom:0;height:0;overflow:hidden;animation:build 8s linear .4s infinite;}
   .printer-build .printer-logo{top:auto;bottom:0;left:50%;transform:translateX(-50%);height:100cqh;}
-  .printer-logo{
+  .printer-logo{opacity:0;animation:logoFade 8s linear .4s infinite;
     -webkit-mask-image:repeating-linear-gradient(0deg,#000 0 3px,rgba(0,0,0,.82) 3px 4px);mask-image:repeating-linear-gradient(0deg,#000 0 3px,rgba(0,0,0,.82) 3px 4px);}
   /* cabeçote: sobe camada por camada (eixo Z) enquanto corre no trilho de um lado pro outro (eixo X) */
   .printer-head{position:absolute;left:0;right:0;bottom:var(--nz-from);height:0;z-index:2;opacity:0;animation:nozzle 8s linear .4s infinite;}
@@ -141,12 +141,17 @@
   .head-glow{position:absolute;bottom:-3px;left:-5px;width:10px;height:6px;border-radius:50%;background:var(--gold-2);filter:blur(2px);box-shadow:0 0 14px 5px rgba(232,200,115,.55);}
   @keyframes headX{to{left:var(--hx-to);}}
   .printer-bed{position:absolute;left:12%;right:12%;bottom:13%;height:1px;background:var(--line-2);}
-  /* ciclo de 8s: imprime (0–35%), fica pronto (35–85%), some (85–95%) e recomeça */
+  /* ciclo de 8s: imprime (0–35%), fica pronto (35–85%), some (85–95%) e recomeça.
+     Altura (na caixa) e opacidade (no logo) ficam em elementos separados e nunca mudam no mesmo instante:
+     a caixa volta pra altura 0 com o logo já invisível, e ele reaparece aos poucos com a caixa ainda baixa.
+     Se mudassem juntas, o celular poderia mostrar um quadro com o logo inteiro visível (o "flash"). */
   @keyframes build{
-    0%{height:0;opacity:1;animation-timing-function:cubic-bezier(.6,.05,.3,1);}
-    35%{height:100%;opacity:1;}
-    85%{height:100%;opacity:1;}
-    95%,100%{height:100%;opacity:0;}}
+    0%{height:0;animation-timing-function:cubic-bezier(.6,.05,.3,1);}
+    35%,100%{height:100%;}}
+  @keyframes logoFade{
+    0%{opacity:0;}
+    4%,85%{opacity:1;}
+    95%,100%{opacity:0;}}
   @keyframes nozzle{
     0%{bottom:var(--nz-from);opacity:0;animation-timing-function:cubic-bezier(.6,.05,.3,1);}
     2%{opacity:1;}
@@ -308,6 +313,7 @@
     html{scroll-behavior:auto;}
     .reveal{opacity:1;transform:none;}
     .printer-build{animation:none;height:100%;}
+    .printer-logo{animation:none;opacity:1;}
     .printer-head{display:none;}
     .printer-stage::before{animation:none;opacity:1;}
   }
