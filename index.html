@@ -94,6 +94,7 @@
   .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease);}
   .nav-links a:hover{color:var(--text);}
   .nav-links a:hover::after{transform:scaleX(1);}
+  .nav-verse{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--gold-2);letter-spacing:.01em;white-space:nowrap;padding-left:34px;border-left:1px solid var(--line-2);}
 
   /* ---------- Hero ---------- */
   .hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:140px 0 100px;position:relative;overflow:hidden;}
@@ -263,7 +264,8 @@
     :root{--gutter:20px;}
     .section{padding:80px 0;}
     .nav{position:absolute;}
-    .nav-links{display:none;}
+    .nav-links a{display:none;}
+    .nav-verse{padding-left:0;border-left:0;font-size:14px;}
     .hero{min-height:auto;padding:88px 0 56px;}
     .hero-grid{gap:0;}
     .printer{--nz-from:22%;--nz-to:80%;--hx-from:40%;--hx-to:60%;--head-h:26px;order:-1;max-width:none;aspect-ratio:5/2;margin-bottom:28px;}
@@ -340,6 +342,7 @@
       <a href="#servicos">O que fazemos</a>
       <a href="#processo">Como funciona</a>
       <a href="#historia">Nossa história</a>
+      <span class="nav-verse">Provérbios 16:3</span>
     </nav>
   </div>
 </header>
