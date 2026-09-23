@@ -12,18 +12,16 @@ const LINKS = {
     instagram: "https://instagram.com/nossoprojeto3d"
   },
   hub: {
-    catalogoWhatsapp: "https://wa.me/c/556293152843",
     shopee: "https://shopee.com.br/nossoprojeto3d?categoryId=100636&entryPoint=ShopByPDP&itemId=58216954178",
     stlsGratis: "https://drive.google.com/drive/folders/1KEVqYll78dvHoo0AbDUCeM57MLXllw48?usp=sharing"
   },
   calculadora: {
     site: "http://nossoprojeto3d.github.io/calc-3d/",
     github: "https://github.com/nossoprojeto3d/calc-3d"
+  },
+  catalogo: {
+    site: "https://nossoprojeto3d.github.io/catalogo/"
   }
-
-  // catalogo: {
-  //   site: "https://...",
-  // }
 };
 
 /**
