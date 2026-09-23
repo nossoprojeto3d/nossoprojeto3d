@@ -130,7 +130,7 @@
   /* a caixa cresce de baixo pra cima revelando o logo, que fica ancorado no fundo com a altura do palco */
   .printer-build{position:absolute;left:0;right:0;bottom:0;height:0;overflow:hidden;animation:build 8s linear .4s infinite;}
   .printer-build .printer-logo{top:auto;bottom:0;left:50%;transform:translateX(-50%);height:100cqh;}
-  .printer-logo{opacity:0;animation:logoFade 8s linear .4s infinite;
+  .printer-logo{opacity:0;will-change:opacity;animation:logoFade 8s linear .4s infinite;
     -webkit-mask-image:repeating-linear-gradient(0deg,#000 0 3px,rgba(0,0,0,.82) 3px 4px);mask-image:repeating-linear-gradient(0deg,#000 0 3px,rgba(0,0,0,.82) 3px 4px);}
   /* cabeçote: sobe camada por camada (eixo Z) enquanto corre no trilho de um lado pro outro (eixo X) */
   .printer-head{position:absolute;left:0;right:0;bottom:var(--nz-from);height:0;z-index:2;opacity:0;animation:nozzle 8s linear .4s infinite;}
@@ -142,23 +142,25 @@
   .head-glow{position:absolute;bottom:-3px;left:-5px;width:10px;height:6px;border-radius:50%;background:var(--gold-2);filter:blur(2px);box-shadow:0 0 14px 5px rgba(232,200,115,.55);}
   @keyframes headX{to{left:var(--hx-to);}}
   .printer-bed{position:absolute;left:12%;right:12%;bottom:13%;height:1px;background:var(--line-2);}
-  /* ciclo de 8s: imprime (0–35%), fica pronto (35–85%), some (85–95%) e recomeça.
-     Altura (na caixa) e opacidade (no logo) ficam em elementos separados e nunca mudam no mesmo instante:
-     a caixa volta pra altura 0 com o logo já invisível, e ele reaparece aos poucos com a caixa ainda baixa.
-     Se mudassem juntas, o celular poderia mostrar um quadro com o logo inteiro visível (o "flash"). */
+  /* ciclo de 8s: imprime (0–35%), fica pronto (35–78%), some (78–86%), pausa e recomeça.
+     Opacidade e posição/altura rodam em processos diferentes no celular e podem dessincronizar alguns quadros.
+     Por isso nada muda de uma vez no recomeço: a caixa e o cabeçote voltam pra base no meio da pausa (~89%),
+     com tudo invisível, e só depois (0%) o logo e o cabeçote reaparecem. Evita o "flash" no celular. */
   @keyframes build{
     0%{height:0;animation-timing-function:cubic-bezier(.6,.05,.3,1);}
-    35%,100%{height:100%;}}
+    35%,88%{height:100%;}
+    89%,100%{height:0;}}
   @keyframes logoFade{
     0%{opacity:0;}
-    4%,85%{opacity:1;}
-    95%,100%{opacity:0;}}
+    4%,78%{opacity:1;}
+    86%,100%{opacity:0;}}
   @keyframes nozzle{
     0%{bottom:var(--nz-from);opacity:0;animation-timing-function:cubic-bezier(.6,.05,.3,1);}
     2%{opacity:1;}
     35%{bottom:var(--nz-to);opacity:1;}
-    41%,100%{bottom:var(--nz-to);opacity:0;}}
-  @keyframes glow{0%,33%{opacity:0;}45%,82%{opacity:1;}95%,100%{opacity:0;}}
+    41%,60%{bottom:var(--nz-to);opacity:0;}
+    61%,100%{bottom:var(--nz-from);opacity:0;}}
+  @keyframes glow{0%,33%{opacity:0;}45%,74%{opacity:1;}86%,100%{opacity:0;}}
 
   .hero-in > *{opacity:0;transform:translateY(18px);animation:fadeUp .9s var(--ease) forwards;}
   .hero-in > *:nth-child(1){animation-delay:.05s;} .hero-in > *:nth-child(2){animation-delay:.15s;} .hero-in > *:nth-child(3){animation-delay:.25s;}
