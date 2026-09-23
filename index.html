@@ -90,11 +90,10 @@
   .brand img{height:30px;width:auto;}
   .brand span{font-family:var(--serif);font-size:17px;letter-spacing:.01em;}
   .nav-links{display:flex;align-items:center;gap:34px;}
-  .nav-links a:not(.btn){font-size:14px;color:var(--muted);position:relative;transition:color .25s ease;}
-  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease);}
-  .nav-links a:not(.btn):hover{color:var(--text);}
-  .nav-links a:not(.btn):hover::after{transform:scaleX(1);}
-  .nav .btn{height:40px;padding:0 18px;font-size:13.5px;}
+  .nav-links a{font-size:14px;color:var(--muted);position:relative;transition:color .25s ease;}
+  .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease);}
+  .nav-links a:hover{color:var(--text);}
+  .nav-links a:hover::after{transform:scaleX(1);}
 
   /* ---------- Hero ---------- */
   .hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:140px 0 100px;position:relative;overflow:hidden;}
@@ -264,8 +263,7 @@
     :root{--gutter:20px;}
     .section{padding:80px 0;}
     .nav{position:absolute;}
-    .nav-links a:not(.btn){display:none;}
-    .brand span{display:none;}
+    .nav-links{display:none;}
     .hero{min-height:auto;padding:88px 0 56px;}
     .hero-grid{gap:0;}
     .printer{--nz-from:22%;--nz-to:80%;--hx-from:40%;--hx-to:60%;--head-h:26px;order:-1;max-width:none;aspect-ratio:5/2;margin-bottom:28px;}
@@ -342,9 +340,6 @@
       <a href="#servicos">O que fazemos</a>
       <a href="#processo">Como funciona</a>
       <a href="#historia">Nossa história</a>
-      <a href="#" data-link="contato.whatsapp" class="btn btn-primary">
-        <svg width="15" height="15" aria-hidden="true"><use href="#i-whatsapp"/></svg>Fazer pedido
-      </a>
     </nav>
   </div>
 </header>
