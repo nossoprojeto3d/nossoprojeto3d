@@ -1,0 +1,60 @@
+<!doctype html>
+<!--
+  Fonte da imagem de compartilhamento (assets/og/og-image.jpg, 1200×630).
+  Pra regenerar depois de editar: abra no Chrome e tire print de 1200×630,
+  ou peça pro Claude rodar o Chrome headless de novo.
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>OG image</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,400&family=Work+Sans:wght@400;500&family=JetBrains+Mono&display=swap">
+<style>
+  :root{--bg:#0E0B07;--line:#2A2217;--line-2:#3A3226;--gold:#C9A227;--gold-2:#E8C873;--text:#F4EFE3;--muted:#A69C87;--faint:#786F5C;}
+  *{box-sizing:border-box;margin:0;}
+  body{width:1200px;height:630px;overflow:hidden;background:var(--bg);color:var(--text);font-family:'Work Sans',sans-serif;position:relative;}
+  body::before{content:"";position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:60px 60px;
+    -webkit-mask-image:radial-gradient(ellipse 60% 80% at 22% 50%,#000 10%,transparent 75%);opacity:.6;}
+  body::after{content:"";position:absolute;width:760px;height:760px;left:-190px;top:50%;transform:translateY(-50%);
+    background:radial-gradient(circle,rgba(201,162,39,.2),transparent 62%);}
+  .wrap{position:relative;z-index:1;display:flex;align-items:center;height:100%;padding:0 80px;gap:72px;}
+
+  .panel{position:relative;flex:0 0 400px;height:400px;border:1px solid var(--line-2);background:linear-gradient(180deg,rgba(24,19,12,.75),rgba(14,11,7,.4));}
+  .corner{position:absolute;width:16px;height:16px;border:0 solid var(--gold);}
+  .c1{top:-1px;left:-1px;border-top-width:1px;border-left-width:1px;} .c2{top:-1px;right:-1px;border-top-width:1px;border-right-width:1px;}
+  .c3{bottom:-1px;left:-1px;border-bottom-width:1px;border-left-width:1px;} .c4{bottom:-1px;right:-1px;border-bottom-width:1px;border-right-width:1px;}
+  .label{position:absolute;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);}
+  .tl{top:20px;left:22px;} .tr{top:20px;right:22px;color:var(--gold);} .bl{bottom:20px;left:22px;} .br{bottom:20px;right:22px;}
+  .stage{position:absolute;inset:18%;display:flex;align-items:center;justify-content:center;}
+  .stage::before{content:"";position:absolute;inset:-12%;background:radial-gradient(circle,rgba(201,162,39,.28),transparent 65%);filter:blur(12px);}
+  .stage img{position:relative;height:100%;width:auto;
+    -webkit-mask-image:repeating-linear-gradient(0deg,#000 0 3px,rgba(0,0,0,.82) 3px 4px);}
+  .bed{position:absolute;left:12%;right:12%;bottom:13%;height:1px;background:var(--line-2);}
+
+  .copy{flex:1;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:14px;}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold);}
+  h1{font-family:'Fraunces',serif;font-weight:300;font-size:66px;line-height:1.05;letter-spacing:-.01em;margin-top:26px;}
+  h1 em{font-style:italic;font-weight:400;background:linear-gradient(100deg,var(--gold),var(--gold-2) 40%,var(--gold) 70%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .meta{margin-top:40px;padding-top:26px;border-top:1px solid var(--line);display:flex;gap:32px;font-size:19px;color:var(--muted);}
+  .meta b{font-family:'Fraunces',serif;font-weight:300;color:var(--text);font-size:22px;}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="panel">
+      <i class="corner c1"></i><i class="corner c2"></i><i class="corner c3"></i><i class="corner c4"></i>
+      <span class="label tl">NP—3D</span><span class="label tr">● Impressão 3D</span>
+      <span class="label bl">Camada 0,20 mm</span><span class="label br">Goiânia · BR</span>
+      <div class="stage"><img src="../logo.png" alt=""></div>
+      <div class="bed"></div>
+    </div>
+    <div class="copy">
+      <span class="eyebrow">Nosso Projeto 3D</span>
+      <h1>Ideias que ganham forma, <em>camada por camada.</em></h1>
+      <div class="meta"><b>Goiânia e região</b><span>·</span><span>Enviamos para todo o Brasil</span></div>
+    </div>
+  </div>
+</body>
+</html>
