@@ -19,6 +19,9 @@ const LINKS = {
   calculadora: {
     site: "http://nossoprojeto3d.github.io/calc-3d/",
     github: "https://github.com/nossoprojeto3d/calc-3d"
+  },
+  fe: {
+    versiculo: "https://www.bible.com/pt/bible/1608/PRO.16.3.ARA" // Provérbios 16:3 (ARA)
   }
 
   // catalogo: {
